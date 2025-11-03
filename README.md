@@ -7,9 +7,7 @@ This project leverages Excel’s data analytics capabilities — including pivot
 
 ## 📊 Dashboard Overview
 
-![E-Commerce Sales Dashboard](https://raw.githubusercontent.com/<your-username>/<your-repo-name>/main/images/ecommerce_dashboard.png)
-
-> *(Replace the above link with your actual GitHub image URL after uploading your screenshot.)*
+![E-Commerce Sales Dashboard](https://github.com/ths887/E-Commerce-Sales-Analysis-Dashboard-Excel-/blob/main/Ecommerce%20Sales%20Analysis%20Dashboard-%20Image.png?raw=true)
 
 ---
 
@@ -43,6 +41,23 @@ This dashboard helps business analysts and decision-makers to:
 | **Charts (Column, Bar, Pie, Map)** | Display trends and comparisons |
 | **Slicers & Filters** | Enable interactive data exploration |
 | **Conditional Formatting** | Highlight year-over-year growth |
+| **DAX (Data Analysis Expressions)** | Custom KPIs & calculated measures (e.g., YoY Growth, Profit Margin) |
+
+---
+
+
+## 🧮 Example DAX Measures Used
+
+Total Sales = SUM(Sales[SalesAmount])
+
+Total Profit = SUM(Sales[Profit])
+
+YoY Sales Growth (%) =
+VAR CurrentYearSales = [Total Sales]
+VAR PreviousYearSales =
+    CALCULATE([Total Sales], SAMEPERIODLASTYEAR('Date'[Date]))
+RETURN
+DIVIDE(CurrentYearSales - PreviousYearSales, PreviousYearSales, 0)
 
 ---
 
